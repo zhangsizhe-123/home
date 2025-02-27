@@ -199,14 +199,14 @@ public:
 };
 
 // 判断素数
-bool isPrime(int N) {
+bool isPrime(BigInt N) {
     if (N < 4) {
         return N > 1;
     }
-    if ((N & 1)==0) {
+    if (N%2==0) {
         return false;
     }
-    for (int i = 3; i * i <= N; i += 2) {
+    for (BigInt i = 3; i * i <= N; i =i+2) {
         if (N % i==0) {
             return false;
         }
