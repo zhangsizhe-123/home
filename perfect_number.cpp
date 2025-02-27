@@ -215,12 +215,12 @@ bool isPrime(BigInt N) {
 }
 
 // 素性测试
-bool primality(int N, const BigInt& M) {
+bool primality(BigInt N, const BigInt& M) {
     if (N == 2) {
         return true;
     }
     BigInt s(4);
-    for (int i = 0; i < N - 2; ++i) {
+    for (BigInt i = 0; i < N - 2; i=i+1) {
         s = (s * s - BigInt(2)) % M;
     }
     return s==0;
